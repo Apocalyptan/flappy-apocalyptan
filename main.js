@@ -8,7 +8,7 @@ let angle = 0;
 let hue = 0;
 let frame = 0;
 let score = 0;
-let gamespeed = 5;
+let gamespeed = 6;
 
 // const gradient = ctx.createLinearGradient(0, 0, 0, 70);
 // gradient.addColorStop ("0.45", "#fff");
@@ -16,6 +16,14 @@ let gamespeed = 5;
 // gradient.addColorStop ("0.55", "#4040ff");
 // gradient.addColorStop ("0.7", "#000");
 // gradient.addColorStop ("0.9", "#fff");
+
+const dead = new Audio();
+dead.src = "death.wav";
+const point = new Audio();
+point.src = "score.wav";
+const soundtrack = new Audio();
+soundtrack.src = "cosmology.mp3";
+soundtrack.volume = 0.1;
 
 const background = new Image();
 background.src = "cavernous.png";
@@ -39,6 +47,7 @@ function handleBackground(){
 function animate (){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.fillRect(10, canvas.height - 90, 50, 50); //player
+    soundtrack.play();
     handleBackground();
     handleObstacles();
     handleParticles();
@@ -74,6 +83,7 @@ function handleCollisions(){
             (bird.y > canvas.height - obstaclesArray[i].bottom &&
             bird.y + bird.height < canvas.height))){
                 // Collsion happens
+                dead.play();
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = "30px Arial";
                 ctx.fillStyle = "white";
