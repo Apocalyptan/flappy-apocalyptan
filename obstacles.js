@@ -13,9 +13,10 @@ class Obstacle {
     draw(){
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, 0, this.width, this.top);
+    ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom);
+
     ctx.strokeStyle = "black";
     ctx.strokeRect(this.x, 0, this.width, this.top);
-    ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom);
     ctx.strokeRect(this.x, canvas.height - this.bottom, this.width, this.bottom);
     }
     update(){
