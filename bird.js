@@ -1,5 +1,5 @@
 const playerSprite = new Image();
-playerSprite.src = "/img/apocalyptan.png";
+playerSprite.src = "apocalyptan.png";
 class Bird {
     constructor(){
         this.x = 150;

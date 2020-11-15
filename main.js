@@ -18,7 +18,7 @@ let gamespeed = 5;
 // gradient.addColorStop ("0.9", "#fff");
 
 const background = new Image();
-background.src = "/img/cavernous.png";
+background.src = "cavernous.png";
 const BG = {
     x1: 0,
     x2: canvas.width,
@@ -65,7 +65,7 @@ window.addEventListener('keyup', function(e){
 }); 
 
 const bang = new Image();
-bang.src = '/img/bang.png';
+bang.src = 'bang.png';
 function handleCollisions(){
     for (let i = 0; i < obstaclesArray.length; i++){
         if (bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&
